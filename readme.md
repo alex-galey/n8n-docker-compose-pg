@@ -13,6 +13,10 @@ Add some configuration tweaks to n8n too.
 
 Run :
 ```bash
+docker volume create db
+docker volume create ssl
+docker volume create n8n
+docker volume create n8n-files
 set -a
 source .env
 docker compose up -d

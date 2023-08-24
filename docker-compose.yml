@@ -20,7 +20,7 @@ services:
       - "80:80"
       - "443:443"
     volumes:
-      - letsencrypt:/letsencrypt
+      - ssl:/letsencrypt
       - /var/run/docker.sock:/var/run/docker.sock:ro
 
   n8n:
@@ -85,7 +85,11 @@ services:
       - POSTGRES_DB=${POSTGRES_DB}
 
 volumes:
-  letsencrypt:
   db:
+    external: true
+  ssl:
+    external: true
   n8n:
+    external: true
   n8n-files:
+    external: true
